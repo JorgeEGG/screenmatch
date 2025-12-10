@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "com.aluracursos.screenmatch.principal.Principal",
+            "projectName": "screenmatch_a6d0546c"
+        },
+        {
+            "type": "java",
+            "name": "PrincipalConListas",
+            "request": "launch",
+            "mainClass": "com.aluracursos.screenmatch.principal.PrincipalConListas",
+            "projectName": "screenmatch_a6d0546c"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Principal",
+            "request": "launch",
+            "mainClass": "Principal",
+            "projectName": "screenmatch_a6d0546c"
+        }
+    ]
+}
