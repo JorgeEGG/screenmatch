@@ -14,7 +14,6 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-@SuppressWarnings("unused")
 public class PrincipalConBusqueda {
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -22,8 +21,9 @@ public class PrincipalConBusqueda {
         System.out.print("\nIngrese el nombre de la pelicula: ");
         var busqueda = teclado.nextLine().replace(" ", "+");
 
-        // String direccion = "https://api.themoviedb.org/3/search/movie?query="+busqueda+"&api_key=2a41cf4f32849a7afd2e458e683d84e4&language=es-ES&page=1";
-        String direccion = "https://www.omdbapi.com/?t="+busqueda+"&apikey=53a418d1";
+        // String direccion =
+        // "https://api.themoviedb.org/3/search/movie?query="+busqueda+"&api_key=2a41cf4f32849a7afd2e458e683d84e4&language=es-ES&page=1";
+        String direccion = "https://www.omdbapi.com/?t=" + busqueda + "&apikey=53a418d1";
 
         HttpClient client = HttpClient.newHttpClient();
 
@@ -40,7 +40,11 @@ public class PrincipalConBusqueda {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(miTituloOmdb);
-        Titulo miTitulo = new Titulo(miTituloOmdb);
-        System.out.println("Titulo convertido: " + miTitulo);
+        try {
+            Titulo miTitulo = new Titulo(miTituloOmdb);
+            System.out.println("Titulo convertido: " + miTitulo);
+        } catch (NumberFormatException e) { // Ocurre en la película "The Flash" porque el año es "2023–, en "Bichos" porque la duración es "89 min (USA) y en muchas películas porque no hay duración
+            System.out.println("Error en los datos de la pelicula: " + e.getMessage());
+        }
     }
 }
