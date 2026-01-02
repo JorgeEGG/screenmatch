@@ -72,21 +72,21 @@ public class PrincipalConListas {
         listaDeArtistas.add("Natalie Portman");
         listaDeArtistas.add("Morgan Freeman");
 
-        System.out.println("\nLista de artistas desordenada:" + listaDeArtistas);
+        System.out.println("\nLista de artistas desordenada:\n" + listaDeArtistas);
 
         Collections.sort(listaDeArtistas);
-        System.out.println("Lista de artistas ordenada:" + listaDeArtistas);
+        System.out.println("\nLista de artistas ordenada:\n" + listaDeArtistas);
 
         Collections.sort(lista);
-        System.out.println("\nLista de títulos ordenada por nombre:" + lista);
+        System.out.println("\nLista de títulos ordenada por nombre:\n" + lista);
 
         Collections.sort(otraLista);
-        System.out.println("Otra lista de títulos ordenada por nombre:" + otraLista);
+        System.out.println("\nOtra lista de títulos ordenada por nombre:\n" + otraLista);
 
         lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
-        System.out.println("\nLista de títulos ordenada por año de lanzamiento:" + lista);
+        System.out.println("\nLista de títulos ordenada por año de lanzamiento:\n" + lista);
 
         otraLista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
-        System.out.println("Otra lista de títulos ordenada por año de lanzamiento:" + otraLista + "\n");
+        System.out.println("\nOtra lista de títulos ordenada por año de lanzamiento:\n" + otraLista + "\n");
     }
 }

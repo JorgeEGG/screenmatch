@@ -8,6 +8,7 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Scanner;
 
+import com.aluracursos.screenmatch.excepciones.ErrorEnConversionDeDuracionException;
 import com.aluracursos.screenmatch.modelos.Titulo;
 import com.aluracursos.screenmatch.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -35,16 +36,21 @@ public class PrincipalConBusqueda {
                 .send(request, BodyHandlers.ofString());
 
         String json = response.body();
-        System.out.println(json);
+        System.out.println("\n" + json);
 
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
         TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-        System.out.println(miTituloOmdb);
+        System.out.println("\n" + miTituloOmdb);
         try {
             Titulo miTitulo = new Titulo(miTituloOmdb);
-            System.out.println("Titulo convertido: " + miTitulo);
+            System.out.println("\nTitulo convertido: " + miTitulo);
+        } catch (ErrorEnConversionDeDuracionException e) {
+            System.out.println("\nError en la conversión de duración: " + e.getMessage());
         } catch (NumberFormatException e) { // Ocurre en la película "The Flash" porque el año es "2023–, en "Bichos" porque la duración es "89 min (USA) y en muchas películas porque no hay duración
-            System.out.println("Error en los datos de la pelicula: " + e.getMessage());
+            System.out.println("\nError en los datos de la pelicula: " + e.getMessage());
+        } finally {
+            System.out.println("\nEl programa finalizó. Gracias por utilizar el buscador de películas.\n");
+            teclado.close();
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.aluracursos.screenmatch.modelos;
 
 import com.google.gson.annotations.SerializedName;
+import com.aluracursos.screenmatch.excepciones.ErrorEnConversionDeDuracionException;
 import com.aluracursos.screenmatch.modelos.Titulo;
 
 public class Titulo implements Comparable<Titulo>{
@@ -24,6 +25,9 @@ public class Titulo implements Comparable<Titulo>{
     public Titulo(TituloOmdb miTituloOmdb) {
         this.nombre = miTituloOmdb.title();
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
+        if (miTituloOmdb.runtime().contains("N/A")) {
+            throw new ErrorEnConversionDeDuracionException("La duración no está disponible para el título " + this.nombre + ". Contiene un 'N/A'. \n");
+        }
         this.sinopsis = miTituloOmdb.plot();
         this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().replace(" min", ""));
         // this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0, 3));
