@@ -28,7 +28,7 @@ public class PrincipalConBusqueda {
         while (true) {
             System.out.print("\nIngrese el nombre de la pelicula: ");
             var busqueda = teclado.nextLine().replace(" ", "+");
-
+            
             if (busqueda.equalsIgnoreCase("salir")) {
                 break;
             }
@@ -36,6 +36,7 @@ public class PrincipalConBusqueda {
             // String direccion =
             // "https://api.themoviedb.org/3/search/movie?query="+busqueda+"&api_key=2a41cf4f32849a7afd2e458e683d84e4&language=es-ES&page=1";
             String direccion = "https://www.omdbapi.com/?t=" + busqueda + "&apikey=53a418d1";
+
 
             try {
                 HttpClient client = HttpClient.newHttpClient();

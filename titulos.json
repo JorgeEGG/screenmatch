@@ -7,32 +7,5 @@
     "IncluidoEnElPlan": false,
     "SumaDeLasEvaluaciones": 0.0,
     "TotalDeEvaluaciones": 0
-  },
-  {
-    "Nombre": "Encanto",
-    "FechaDeLanzamiento": 2021,
-    "Sinopsis": "An extraordinary family, the Madrigals, live hidden in the mountains of Colombia, in a magical house called an Encanto. The magic of the Encanto has blessed every child in the family with a unique gift - every child except one, Mi...",
-    "DuracionEnMinutos": 102,
-    "IncluidoEnElPlan": false,
-    "SumaDeLasEvaluaciones": 0.0,
-    "TotalDeEvaluaciones": 0
-  },
-  {
-    "Nombre": "Titanic",
-    "FechaDeLanzamiento": 1997,
-    "Sinopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-    "DuracionEnMinutos": 194,
-    "IncluidoEnElPlan": false,
-    "SumaDeLasEvaluaciones": 0.0,
-    "TotalDeEvaluaciones": 0
-  },
-  {
-    "Nombre": "Avatar",
-    "FechaDeLanzamiento": 2009,
-    "Sinopsis": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-    "DuracionEnMinutos": 162,
-    "IncluidoEnElPlan": false,
-    "SumaDeLasEvaluaciones": 0.0,
-    "TotalDeEvaluaciones": 0
   }
 ]
