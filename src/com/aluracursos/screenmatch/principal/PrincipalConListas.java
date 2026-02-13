@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.aluracursos.screenmatch.modelos.Episodio;
+// import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 import com.aluracursos.screenmatch.modelos.Titulo;
@@ -18,7 +18,7 @@ public class PrincipalConListas {
         Pelicula otraPelicula = new Pelicula("Titanic", 1997);
         var peliculaDeKike = new Pelicula("El señor de los anillos: La comunidad del anillo", 2001);
         Serie casaDragon = new Serie("La Casa del Dragon", 2022);
-        Episodio episodio = new Episodio();
+        // Episodio episodio = new Episodio();
 
         Pelicula p1 = miPelicula; // Upcasting: una Pelicula es un Titulo
         System.out.println("\n" + p1.getNombre());
